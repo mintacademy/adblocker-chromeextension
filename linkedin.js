@@ -5,7 +5,9 @@ function removeAds() {
     // *** Restrict our feed search to ONLY spans & divs
     let theFeed = mainFeed.querySelectorAll('span,div')
 
-    for (let i = 0; i < theFeed.length; ++i) {
+    // adding some comments
+    // fixing i++ bug
+    for (let i = 0; i < theFeed.length; i++) {
         // Check if they contain the text 'Promoted'
           if (theFeed[i].innerHTML === "\n            Promoted\n        ") {
           //  console.log("Found the Promoted feed item! => ")
