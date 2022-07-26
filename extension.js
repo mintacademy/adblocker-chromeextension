@@ -12,8 +12,9 @@ chrome.webNavigation.onCommitted.addListener(function (tab) {
             // Get the URL of the webpage
             let url = tabs[0].url;
             // Remove unnecessary protocol definitions and www subdomain from the URL
-            let parsedUrl = url.replace("https://", "")
-                .replace("http://", "")
+            // Fixing bug
+            let parsedUrl = url.replace("http://", "")
+                .replace("https://", "")
                 .replace("www.", "")
 
             // Remove path and queries e.g. linkedin.com/feed or linkedin.com?query=value
