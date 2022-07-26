@@ -35,6 +35,7 @@ function removeAds() {
 removeAds();
 
 // Ensures ads will be removed as the user scrolls
+// test mod
 setInterval(function () {
     removeAds();
 }, 100)
