@@ -5,14 +5,16 @@
 */
 chrome.webNavigation.onCommitted.addListener(function (tab) {
     // Prevents script from running when other frames load
+    // hi
     if (tab.frameId == 0) {
         chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
 
             // Get the URL of the webpage
             let url = tabs[0].url;
             // Remove unnecessary protocol definitions and www subdomain from the URL
-            let parsedUrl = url.replace("https://", "")
-                .replace("http://", "")
+            // Fixing bug
+            let parsedUrl = url.replace("http://", "")
+                .replace("https://", "")
                 .replace("www.", "")
 
             // Remove path and queries e.g. linkedin.com/feed or linkedin.com?query=value
