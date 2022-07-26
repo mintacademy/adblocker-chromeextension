@@ -1,19 +1,24 @@
 function removeAds() {
 
-    // Get all 'span' elements on the page
-    let spans = document.getElementsByTagName("span");
+    // *** Get all elements in the feed
+    let mainFeed = document.getElementById("main");
+    // *** Restrict our feed search to ONLY spans & divs
+    let theFeed = mainFeed.querySelectorAll('span,div')
 
-    for (let i = 0; i < spans.length; ++i) {
+    for (let i = 0; i < theFeed.length; ++i) {
         // Check if they contain the text 'Promoted'
-        if (spans[i].innerHTML === "Promoted") {
+          if (theFeed[i].innerHTML === "\n            Promoted\n        ") {
+          //  console.log("Found the Promoted feed item! => ")
+          //  console.log(theFeed[i].innerHTML)
+
             // Get the div that wraps around the entire ad
-            let card = spans[i].closest(".feed-shared-update-v2");
+            let card = theFeed[i].closest(".feed-shared-update-v2");
 
             // If the class changed and we can't find it with closest(), get the 6th parent
             if (card === null) {
                 // Could also be card.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode :D
                 let j = 0;
-                card = spans[i];
+                card = theFeed[i];
                 while (j < 6) {
                     card = card.parentNode;
                     ++j;
