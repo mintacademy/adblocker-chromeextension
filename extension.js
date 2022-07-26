@@ -5,6 +5,7 @@
 */
 chrome.webNavigation.onCommitted.addListener(function (tab) {
     // Prevents script from running when other frames load
+    // hi
     if (tab.frameId == 0) {
         chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
 
