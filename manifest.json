@@ -1,16 +1,17 @@
 {
     "manifest_version": 2,
-    "name": "LinkedIn AdBlocker",
+    "name": "AdBlocker: LinkedIn & Twitter ",
     "description": "Blocking ads.",
     "version": "0.0.1",
     "author": "<AUTHOR_NAME>",
     "browser_action": {
-        "default_title": "LinkedIn AdBlocker"
+        "default_title": "AdBlocker: LinkedIn & Twitter"
     },
     "permissions": [
         "tabs",
         "webNavigation",
-        "https://www.linkedin.com/"
+        "https://www.linkedin.com/",
+        "https://twitter.com/"
     ],
     "background": {
         "scripts": [
